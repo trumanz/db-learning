@@ -4,9 +4,9 @@
 start_nodes() {
    docker rm -f  pg0
    docker rm -f  pg1
-
-   docker run --name=pg0 -h pg0  -t -d -i  trumanz/postgresql_slony  /run.sh
-   docker run --name=pg1 -h pg1  -t -d -i  trumanz/postgresql_slony  /run.sh
+   DIR=$(pwd)
+   docker run --name=pg0 -h pg0  -t -d -i  -v $DIR:/hostdata trumanz/postgresql_slony  /run.sh
+   docker run --name=pg1 -h pg1  -t -d -i  -v $DIR:/hostdata trumanz/postgresql_slony  /run.sh
    sleep 5
 }
 

@@ -11,8 +11,7 @@ services:
 before_script:
 -  sudo apt-get update
 -  sudo apt-get install -y  python-dev python-pip
--  sudo apt-get install -y slony1-2-bin  postgresql-contrib
 -  sudo pip install SQLAlchemy
 
 script:
--  env  OMP_NUM_THREADS=4  ./run-all.sh
+-  ./run-all.sh
