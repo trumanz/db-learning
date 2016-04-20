@@ -1,0 +1,16 @@
+sudo: required
+dist: trusty
+
+language: python
+python:
+   - "2.7"
+
+services:
+    - docker
+before_script:
+-  sudo apt-get update
+-  sudo apt-get install -y  bison flex
+-  ./prep-env.sh
+
+script:
+-  env  OMP_NUM_THREADS=4  ./run-all.sh
