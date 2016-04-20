@@ -2,6 +2,7 @@
 
 
 start_nodes() {
+   docker pull  trumanz/postgresql_slony
    docker rm -f  pg0
    docker rm -f  pg1
    DIR=$(pwd)
