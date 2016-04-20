@@ -5,9 +5,11 @@ from sqlalchemy import create_engine
 
 
 
-pg_host = os.environ["MASTERHOST"]
-print pg_host
-engine = create_engine("postgresql://postgres:postgres@" +  pg_host + "/fly");
+pg_master = os.environ["MASTERHOST"]
+pg_slave  =  os.environ["SLAVEHOST"]
+
+
+engine = create_engine("postgresql://postgres:postgres@" +  pg_master + "/fly");
 
 connection  = engine.connect()
 trans = connection.begin()
