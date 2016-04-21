@@ -4,14 +4,12 @@ dist: trusty
 language: python
 python:
    - "2.7"
-
+install: "pip install SQLAlchemy"
 services:
     - docker
-
 before_script:
 -  sudo apt-get update
 -  sudo apt-get install -y  python-dev python-pip
--  sudo pip install SQLAlchemy
 
 script:
 #-  cd postgresql_slony && ./run.sh
