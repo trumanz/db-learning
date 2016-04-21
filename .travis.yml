@@ -14,4 +14,5 @@ before_script:
 -  sudo pip install SQLAlchemy
 
 script:
--  cd postgresql_slony && ./run.sh
+#-  cd postgresql_slony && ./run.sh
+-  cd postgresql && ./run.sh
