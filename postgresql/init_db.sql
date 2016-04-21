@@ -46,7 +46,7 @@ CREATE OR REPLACE FUNCTION public.load_flights_with_departure(
    RETURNS SETOF flights AS  $$
    SELECT * FROM flights WHERE departure_airport = $1
                  AND ($2 IS NULL OR departure_timestampe >= _departure_timestampe_l)
-                 AND ($3 IS NULL OR departure_timestampe <  _departure_timestampe_l)
+                 AND ($3 IS NULL OR departure_timestampe <  _departure_timestampe_r)
    $$ 
    LANGUAGE sql STABLE;
 
