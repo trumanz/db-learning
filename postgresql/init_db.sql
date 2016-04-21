@@ -49,3 +49,4 @@ CREATE OR REPLACE FUNCTION public.load_flights_with_departure(
                  AND ($3 IS NULL OR departure_timestampe <  _departure_timestampe_l)
    $$ 
    LANGUAGE sql STABLE;
+

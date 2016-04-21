@@ -9,6 +9,6 @@ ping -c 5 $IP
 export PG_HOST=$IP
 env PGPASSWORD=postgres psql -h $PG_HOST   -U postgres   -f  init_db.sql
 
-#python -m unittest discover -v  -s  ./test  -p test*.py
+python -m unittest discover -v  -s  ./test  -p test*.py
 docker rm -f  pg
 
